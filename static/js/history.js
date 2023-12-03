@@ -32,6 +32,7 @@ fetch('/auth/history')
               <p class="card-text fw-bold"><strong>Carriage: </strong> ${ticket.carriage}</p>
               <p class="card-text fw-bold"><strong>Date: </strong> ${ticket.ticketDate}</p>
               <p class="card-text fw-bold"><strong>Time: </strong> ${ticket.ticketTime}:00</p>
+              <p class="card-text fw-bold"><strong>Seat: </strong> ${ticket.seat}</p>
               <p class="card-text fw-bold"><strong>Price: </strong> ${ticket.price}</p>
               <p class="card-text text-bg-danger fw-bold">State:  ${state}</p>
 
@@ -48,6 +49,7 @@ fetch('/auth/history')
               <p class="card-text fw-bold"><strong>Carriage: </strong> ${ticket.carriage}</p>
               <p class="card-text fw-bold"><strong>Date: </strong> ${ticket.ticketDate}</p>
               <p class="card-text fw-bold"><strong>Time: </strong> ${ticket.ticketTime}:00</p>
+              <p class="card-text fw-bold"><strong>Seat: </strong> ${ticket.seat}</p>
               <p class="card-text fw-bold"><strong>Price: </strong> ${ticket.price}</p>
               <p class="card-text text-bg-success fw-bold">State:  ${state}</p>
             </div>
