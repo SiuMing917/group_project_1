@@ -1,0 +1,252 @@
+<!--
+    HUI Siu Ming
+    23020776D
+    One-Person-Group
+    (6➗4=1餘2)
+    So, Train Ticket Selling System
+-->
+<!doctype html>
+<html>
+  <head>
+    <title>SM Train Ticket Selling System</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous" />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"></script>
+    <script src="#"></script>
+    <style>
+      .seat {
+        fill: green;
+        stroke: blue;
+        stroke-width: 2px;
+        cursor: pointer;
+      }
+      .selected {
+        fill: red;
+        stroke: black;
+        stroke-width: 2px;
+        cursor: not-allowed;
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <h6 class="navbar-brand text-primary">SM TRAIN</h6>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarNavAltMarkup"
+        aria-controls="navbarNavAltMarkup"
+        aria-expanded="false"
+        aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-center" id="navbarNavAltMarkup">
+        <ul class="navbar-nav lead text-capitalize">
+          <li class="nav-link"><a href="./index.html" class="nav-link active">HOME</a></li>
+          <li class="nav-link"><a href="./trains.html" class="nav-link active">TRAIN INFO</a></li>
+          <li class="nav-link"><a href="./search.html" class="nav-link active">SEARCH</a></li>
+          <li class="nav-link"><a href="./ticketing.html" class="nav-link active text-danger fw-bold">TICKETING</a></li>
+          <li class="nav-link"><a href="./history.html" class="nav-link active">HISTORY</a></li>
+          <li class="nav-link"><a href="./account.html" class="nav-link active">ACCOUNT</a></li>     
+          </ul>
+      </div>
+    </nav>
+
+    <div class="container">
+      <div class="row container-fluid py-auto my-2 mx-0">
+        <heading class="text-center mt-auto"><h1>Ticketing</h1></heading>
+      </div>
+      <form action="/auth/pay" method="post" enctype="multipart/form-data">
+        <div class="row container-fluid mb-3 my-2 mx-0">
+          <label for="destination" class="form-label">Destination：</label>
+          <select class="form-control" name="destination" id="destination">
+            <option value="" selected>Please Select</option>
+          </select>
+        </div>
+        <div class="row container-fluid mb-3 my-2 mx-0">
+          <label for="carriage" class="form-label">Carriage：</label>
+          <select class="form-control" name="carriage" id="carriage">
+            <option value="" selected>Please Select</option>
+            <option value="carriage1">1</option>
+            <option value="carriage2">2</option>
+            <option value="carriage3">3</option>
+            <option value="carriage4">4</option>
+            <option value="carriage5">5</option>
+            <option value="carriage6">6</option>
+          </select>
+        </div>
+
+        <div class="row container-fluid py-auto my-2 mx-0">
+          <label for="ticketDate" class="form-label">Date：</label>
+          <input type="date" class="form-control" id="ticketDate" name="ticketDate" />
+        </div>
+
+        <div class="row container-fluid mb-3 my-2 mx-0">
+          <label for="ticketTime" class="form-label">Time：</label>
+          <select class="form-control" name="ticketTime" id="ticketTime">
+            <option value="" selected>Please Select</option>
+            <option value="8">8:00-10:00</option>
+            <option value="10">10:00-12:00</option>
+            <option value="12">12:00-14:00</option>
+            <option value="14">14:00-16:00</option>
+            <option value="16">16:00-18:00</option>
+            <option value="18">18:00-20:00</option>
+          </select>
+        </div>
+
+        <div class="row container-fluid py-auto my-2 mx-0">
+          <label for="seatSelection" class="form-label">Seat：</label>
+          <input type="text" class="form-control" id="seat" name="seat" placeholder="Click a Seat" readonly />
+          <svg id="seatSelection" width="1200" height="350">
+              <rect class="seat" x="80" y="20" width="50" height="50" id="A1" />
+              <rect class="seat" x="150" y="20" width="50" height="50" id="A2" />
+              <rect class="seat" x="220" y="20" width="50" height="50" id="A3" />
+              <rect class="seat" x="290" y="20" width="50" height="50" id="A4" />
+              <rect class="seat" x="360" y="20" width="50" height="50" id="A5" />
+              <rect class="seat" x="430" y="20" width="50" height="50" id="A6" />
+              <rect class="seat" x="500" y="20" width="50" height="50" id="A7" />
+              <rect class="seat" x="570" y="20" width="50" height="50" id="A8" />
+              <rect class="seat" x="640" y="20" width="50" height="50" id="A9" />
+              <rect class="seat" x="710" y="20" width="50" height="50" id="A10" />
+              <rect class="seat" x="80" y="90" width="50" height="50" id="B1" />
+              <rect class="seat" x="150" y="90" width="50" height="50" id="B2" />
+              <rect class="seat" x="220" y="90" width="50" height="50" id="B3" />
+              <rect class="seat" x="290" y="90" width="50" height="50" id="B4" />
+              <rect class="seat" x="360" y="90" width="50" height="50" id="B5" />
+              <rect class="seat" x="430" y="90" width="50" height="50" id="B6" />
+              <rect class="seat" x="500" y="90" width="50" height="50" id="B7" />
+              <rect class="seat" x="570" y="90" width="50" height="50" id="B8" />
+              <rect class="seat" x="640" y="90" width="50" height="50" id="B9" />
+              <rect class="seat" x="710" y="90" width="50" height="50" id="B10" />
+
+              <text x="105" y="45" text-anchor="middle" alignment-baseline="central" fill="white">A1</text>
+              <text x="175" y="45" text-anchor="middle" alignment-baseline="central" fill="white">A2</text>
+              <text x="245" y="45" text-anchor="middle" alignment-baseline="central" fill="white">A3</text>
+              <text x="315" y="45" text-anchor="middle" alignment-baseline="central" fill="white">A4</text>
+              <text x="385" y="45" text-anchor="middle" alignment-baseline="central" fill="white">A5</text>
+              <text x="455" y="45" text-anchor="middle" alignment-baseline="central" fill="white">A6</text>
+              <text x="525" y="45" text-anchor="middle" alignment-baseline="central" fill="white">A7</text>
+              <text x="595" y="45" text-anchor="middle" alignment-baseline="central" fill="white">A8</text>
+              <text x="665" y="45" text-anchor="middle" alignment-baseline="central" fill="white">A9</text>
+              <text x="735" y="45" text-anchor="middle" alignment-baseline="central" fill="white">A10</text>
+              <text x="105" y="115" text-anchor="middle" alignment-baseline="central" fill="white">B1</text>
+              <text x="175" y="115" text-anchor="middle" alignment-baseline="central" fill="white">B2</text>
+              <text x="245" y="115" text-anchor="middle" alignment-baseline="central" fill="white">B3</text>
+              <text x="315" y="115" text-anchor="middle" alignment-baseline="central" fill="white">B4</text>
+              <text x="385" y="115" text-anchor="middle" alignment-baseline="central" fill="white">B5</text>
+              <text x="455" y="115" text-anchor="middle" alignment-baseline="central" fill="white">B6</text>
+              <text x="525" y="115" text-anchor="middle" alignment-baseline="central" fill="white">B7</text>
+              <text x="595" y="115" text-anchor="middle" alignment-baseline="central" fill="white">B8</text>
+              <text x="665" y="115" text-anchor="middle" alignment-baseline="central" fill="white">B9</text>
+              <text x="735" y="115" text-anchor="middle" alignment-baseline="central" fill="white">B10</text>
+
+              <rect class="seat" x="80" y="200" width="50" height="50" id="C1" />
+              <rect class="seat" x="150" y="200" width="50" height="50" id="C2" />
+              <rect class="seat" x="220" y="200" width="50" height="50" id="C3" />
+              <rect class="seat" x="290" y="200" width="50" height="50" id="C4" />
+              <rect class="seat" x="360" y="200" width="50" height="50" id="C5" />
+              <rect class="seat" x="430" y="200" width="50" height="50" id="C6" />
+              <rect class="seat" x="500" y="200" width="50" height="50" id="C7" />
+              <rect class="seat" x="570" y="200" width="50" height="50" id="C8" />
+              <rect class="seat" x="640" y="200" width="50" height="50" id="C9" />
+              <rect class="seat" x="710" y="200" width="50" height="50" id="C10" />
+              <rect class="seat" x="80" y="270" width="50" height="50" id="D1" />
+              <rect class="seat" x="150" y="270" width="50" height="50" id="D2" />
+              <rect class="seat" x="220" y="270" width="50" height="50" id="D3" />
+              <rect class="seat" x="290" y="270" width="50" height="50" id="D4" />
+              <rect class="seat" x="360" y="270" width="50" height="50" id="D5" />
+              <rect class="seat" x="430" y="270" width="50" height="50" id="D6" />
+              <rect class="seat" x="500" y="270" width="50" height="50" id="D7" />
+              <rect class="seat" x="570" y="270" width="50" height="50" id="D8" />
+              <rect class="seat" x="640" y="270" width="50" height="50" id="D9" />
+              <rect class="seat" x="710" y="270" width="50" height="50" id="D10" />
+              <text x="105" y="225" text-anchor="middle" alignment-baseline="central" fill="white">C1</text>
+              <text x="175" y="225" text-anchor="middle" alignment-baseline="central" fill="white">C2</text>
+              <text x="245" y="225" text-anchor="middle" alignment-baseline="central" fill="white">C3</text>
+              <text x="315" y="225" text-anchor="middle" alignment-baseline="central" fill="white">C4</text>
+              <text x="385" y="225" text-anchor="middle" alignment-baseline="central" fill="white">C5</text>
+              <text x="455" y="225" text-anchor="middle" alignment-baseline="central" fill="white">C6</text>
+              <text x="525" y="225" text-anchor="middle" alignment-baseline="central" fill="white">C7</text>
+              <text x="595" y="225" text-anchor="middle" alignment-baseline="central" fill="white">C8</text>
+              <text x="665" y="225" text-anchor="middle" alignment-baseline="central" fill="white">C9</text>
+              <text x="735" y="225" text-anchor="middle" alignment-baseline="central" fill="white">C10</text>
+              <text x="105" y="295" text-anchor="middle" alignment-baseline="central" fill="white">D1</text>
+              <text x="175" y="295" text-anchor="middle" alignment-baseline="central" fill="white">D2</text>
+              <text x="245" y="295" text-anchor="middle" alignment-baseline="central" fill="white">D3</text>
+              <text x="315" y="295" text-anchor="middle" alignment-baseline="central" fill="white">D4</text>
+              <text x="385" y="295" text-anchor="middle" alignment-baseline="central" fill="white">D5</text>
+              <text x="455" y="295" text-anchor="middle" alignment-baseline="central" fill="white">D6</text>
+              <text x="525" y="295" text-anchor="middle" alignment-baseline="central" fill="white">D7</text>
+              <text x="595" y="295" text-anchor="middle" alignment-baseline="central" fill="white">D8</text>
+              <text x="665" y="295" text-anchor="middle" alignment-baseline="central" fill="white">D9</text>
+              <text x="735" y="295" text-anchor="middle" alignment-baseline="central" fill="white">D10</text>
+            </svg>
+          </div>
+        </div>
+        <div class="row container-fluid mb-3 my-2 mx-0">
+          <div id="selected-seat" class="text-center fw-bold fs-2 mt-2">Click a Seat</div>
+        </div>
+        <div class="row container-fluid mb-3 my-2 mx-0">
+          <label for="price">Price:</label>
+          <input
+            type="text"
+            class="form-control"
+            id="price"
+            name="price"
+            placeholder="Choose a Destination，Price will show here"
+            readonly />
+        </div>
+        <div class="row container-fluid mb-3 my-2 mx-0">
+          <button type="button" class="btn btn-primary" id="seatbtn">Check Seats</button>
+        </div>
+        <div class="row container-fluid mb-3 my-2 mx-0">
+          <button type="button" class="btn btn-primary" id="paybtn">Pay</button>
+        </div>
+      </form>
+    </div>
+
+    <footer class="bd-footer py-1 py-md-1 mt-1 bg-body-tertiary">
+      <div class="container py-1 py-md-1 px-1 px-md-1 text-body-secondary">
+        <div class="row text-center">
+          <h5>
+            © &lt23020776D&gt &ltHUI Siu Ming&gt - EIE4432 Group Project - Date & Time:
+            <script type="text/javascript">
+              <!--
+              var currentTime = new Date();
+              var month = currentTime.getMonth() + 1;
+              var day = currentTime.getDate();
+              var year = currentTime.getFullYear();
+              document.write(day + '/' + month + '/' + year);
+              //-->
+            </script>
+            <script type="text/javascript">
+              <!--
+              var currentTime = new Date();
+              var hours = currentTime.getHours();
+              var minutes = currentTime.getMinutes();
+              if (minutes < 10) {
+                minutes = '0' + minutes;
+              }
+              document.write(hours + ':' + minutes + ' ');
+              if (hours > 11) {
+                document.write('PM');
+              } else {
+                document.write('AM');
+              }
+              //-->
+            </script>
+          </h5>
+        </div>
+      </div>
+    </footer>
+
+    <script src="./js/ticket.js"></script>
+  </body>
+</html>

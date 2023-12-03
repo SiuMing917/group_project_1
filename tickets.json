@@ -1,0 +1,12 @@
+[
+  {
+    "username": "23020776d",
+    "destination": "trainA",
+    "carriage": "carriage1",
+    "ticketDate": "2023-12-03",
+    "ticketTime": "10",
+    "seat": "A1",
+    "price": "$100",
+    "enabled": true
+  }
+]

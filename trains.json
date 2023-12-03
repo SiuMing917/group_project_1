@@ -1,0 +1,7 @@
+[
+  { "destination": "trainA", "image": "#", "price": "$100", "enabled": true },
+  { "destination": "trainB", "image": "#", "price": "$110", "enabled": true },
+  { "destination": "trainC", "image": "#", "price": "$120", "enabled": true },
+  { "destination": "trainD", "image": "#", "price": "$130", "enabled": true },
+  { "destination": "trainE", "image": "#", "price": "$140", "enabled": true }
+]
